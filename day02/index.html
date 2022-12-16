@@ -23,11 +23,21 @@
       }
 
       .header {
-        border: 2px solid goldenrod;
+        border: 10px solid goldenrod;
         padding: 1rem;
         margin: 0 auto;
         text-align: center;
         font-size: 1.1rem;
+      }
+
+      .header-outline {
+        outline: 10px solid goldenrod;
+        border: 1px solid red;
+        padding: 1rem;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 1.1rem;
+        margin-top: 2rem;
       }
     </style>
 
@@ -52,9 +62,16 @@
         </header>
       );
 
+      const headerOutline = (
+        <header className="header-outline">
+          <h1>Title: Learning react JSX</h1>
+          <p>Learning react today!</p>{" "}
+        </header>
+      );
+
       const main = (
         <main>
-          <h1 style={{ color: "red", fontSize: "1.25rem", padding: "2rem" }}>
+          <h1 style={{ color: "red", fontSize: "1.25rem", margin: "2rem 0" }}>
             This is the main content.
           </h1>
           <p>And this is more main content...</p>
@@ -70,6 +87,7 @@
       const app = (
         <div>
           {header}
+          {headerOutline}
           {main}
           {footer}
         </div>
