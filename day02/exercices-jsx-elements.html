@@ -1,0 +1,109 @@
+<!--
+  Ex. 1. What is a JSX Element?
+
+  JSX allow us to write HTML elements with javascript in a more convinient way.
+  It is a syntax extention to write a XML-like file using javascript and then transpile that code to HTML, so this way a JSX element is almost exactly like a HTML element.
+-->
+
+<!--
+  Ex. 2.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>30 Days Of React Challenge</title>
+  </head>
+
+  <body>
+    <div class="root"></div>
+
+    <style>
+      html {
+        font-size: 14px;
+      }
+
+      body {
+        font-family: "Courier New", Courier, monospace;
+        margin: 2rem 10%;
+        text-align: center;
+        font-size: 1.5rem;
+      }
+
+      div > div {
+        border: 1px solid black;
+        margin: 1rem;
+      }
+
+      footer {
+        border: 1px solid red;
+      }
+    </style>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      // To get the root element from the HTML document
+      const root = document.querySelector(".root");
+
+      // JSX element
+      function createUser() {
+        const nickname = <h1>Mathdothings</h1>;
+        const country = <p>Brazil</p>;
+        const gender = <p>Male</p>;
+        const email = <p>mathdothings@email.com</p>;
+        const phone = <p>+XX (XX) XXXXX-XXXX</p>;
+        const user = (
+          <div>
+            {nickname}
+            {country}
+            {gender}
+            {email}
+            {phone}
+          </div>
+        );
+
+        return user;
+      }
+
+      // Ex. 3.
+
+      function createFooter() {
+        const footer = (
+          <div>
+            <p>User successfully created!</p>
+          </div>
+        );
+        return footer;
+      }
+
+      function startApp() {
+        const app = (
+          <div>
+            {createUser()}
+            {createFooter()}
+          </div>
+        );
+
+        return app;
+      }
+
+      const apps = [];
+      for (let x = 0; x < 10; x++) {
+        apps.push(startApp());
+      }
+
+      // we render the JSX element using the ReactDOM package
+      // ReactDOM has the render method and the render method takes two arguments
+      ReactDOM.render(apps, root);
+    </script>
+  </body>
+</html>
