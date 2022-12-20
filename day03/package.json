@@ -1,0 +1,12 @@
+{
+  "type": "module",
+  "name": "math",
+  "version": "1.0.0",
+  "description": "Basic math operations",
+  "main": "math.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mathdothins",
+  "license": "ISC"
+}
