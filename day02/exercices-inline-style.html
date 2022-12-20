@@ -1,0 +1,119 @@
+<!--
+  Ex. 1. Create a style object for the main JSX
+-->
+
+<!--
+  Ex. 2. Create a style object for the footer and app JSX
+-->
+
+<!--
+  Ex. 3. Add more styles to the JSX elements
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>30 Days Of React Challenge</title>
+  </head>
+
+  <body>
+    <div class="root"></div>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+
+      html {
+        font-size: 14px;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Courier New", Courier, monospace;
+      }
+    </style>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      // To get the root element from the HTML document
+      const root = document.querySelector(".root");
+
+      const titleStyle = {
+        backgroundColor: "orange",
+        borderRadius: "0.25rem",
+        color: "darkblue",
+        margin: "1rem",
+        padding: "2rem",
+        textAlign: "center",
+      };
+
+      const mainStyle = {
+        backgroundColor: "goldenrod",
+        borderRadius: "0.25rem",
+        color: "purple",
+        margin: "1rem",
+        padding: "2rem",
+        textAlign: "center",
+      };
+
+      const nickStyle = {
+        textAlign: "center",
+      };
+
+      const footerStyle = {
+        backgroundColor: "darkorange",
+        borderRadius: "0.25rem",
+        color: "darkbrown",
+        margin: "1rem",
+        padding: "1rem",
+        padding: "2rem",
+        textAlign: "center",
+      };
+
+      const main = (
+        <main style={mainStyle}>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus iusto
+          illum obcaecati, exercitationem alias doloribus consequatur error
+          recusandae? Sint, error!
+        </main>
+      );
+      const title = <h1 style={titleStyle}>Lorem ipsum dolor sit amet.</h1>;
+      const footer = <footer style={footerStyle}>Lorem, ipsum dolor.</footer>;
+
+      const nickName = "mathdothings";
+      const nick = (
+        <p style={nickStyle}>
+          {typeof nickName === "string" ? nickName : null}
+        </p>
+      );
+
+      const app = (
+        <section>
+          {title}
+          {main}
+          {nick}
+          {footer}
+        </section>
+      );
+
+      // we render the JSX element using the ReactDOM package
+      // ReactDOM has the render method and the render method takes two arguments
+      ReactDOM.render(app, root);
+    </script>
+  </body>
+</html>
