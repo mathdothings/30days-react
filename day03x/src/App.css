@@ -9,6 +9,10 @@ header, main, footer {
   margin-bottom: 0.5rem;
 }
 
+header:hover, main:hover, footer:hover {
+  background-color: aquamarine;
+}
+
 p {
   margin: 0 0.5rem 1rem;
 }
