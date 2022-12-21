@@ -1,7 +1,7 @@
 import "./App.css";
 
 const header = (
-  <header>
+  <header key={"header"}>
     <h1>Header</h1>
     <p>
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis,
@@ -11,7 +11,7 @@ const header = (
 );
 
 const main = (
-  <main>
+  <main key={"main"}>
     <h2>Main</h2>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam saepe
@@ -23,7 +23,7 @@ const main = (
 );
 
 const footer = (
-  <footer>
+  <footer key={"footer"}>
     <h3>Footer</h3>
     <small>Lorem ipsum dolor sit amet.</small>
   </footer>
