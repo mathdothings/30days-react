@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import html_logo from "./images/html-svgrepo-com.svg";
 import css_logo from "./images/css-svgrepo-com.svg";
