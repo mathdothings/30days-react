@@ -29,11 +29,21 @@ const footer = (
   </footer>
 );
 
+const Footer = () => {
+  return (
+    <div>
+      <p>Hello from my footer component.</p>
+    </div>
+  );
+};
+
 const app = (
   <div className="App">
     {header}
     {main}
     {footer}
+    {Footer()}
+    <Footer />
   </div>
 );
 

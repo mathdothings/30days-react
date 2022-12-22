@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.hello {
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  border: 1px solid gold;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  margin-top: 2rem;
+}
