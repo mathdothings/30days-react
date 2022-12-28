@@ -35,8 +35,18 @@ input {
   outline: none;
 }
 
+input:active, input:hover, input:focus {
+  outline: 2px solid salmon;
+}
+
 [type=submit] {
   background-color: salmon;
   color: white;
   padding: 0.5rem 2rem;
+  cursor: pointer;
+}
+
+[type=submit]:active, [type=submit]:hover, [type=submit]:focus{
+  outline: 3px solid teal;
+  color: black;
 }
