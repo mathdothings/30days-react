@@ -17,18 +17,21 @@ const cardStyle = () => {
 };
 
 // single card componet generator
-const Card = () => (
-  <div style={cardStyle()} className="card">
-    {hexaColor()}
-  </div>
-);
+const Card = (key = 0) => {
+  const style = cardStyle();
+  return (
+    <div style={style} className="card" key={key}>
+      {style.backgroundColor}
+    </div>
+  );
+};
 
 // multiple card component generator
 const GenerateCards = (amout = 1) => {
   const cards = [];
   if (amout >= 1) {
     for (let x = 0; x < amout; x++) {
-      cards.push(Card());
+      cards.push(Card(x));
     }
   }
 
