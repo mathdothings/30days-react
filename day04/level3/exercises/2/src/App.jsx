@@ -1,10 +1,25 @@
 import "./App.css";
 
-const Header = () => (
-  <header>
-    <img src="https://via.placeholder.com/150" alt="" />
-  </header>
-);
+const getBodyOffsetWidth = () => {
+  const body = document.querySelector("body");
+  body.onresize = () => {
+    return body.offsetWidth;
+  };
+
+  return body.offsetWidth;
+};
+
+const Header = () => {
+  const size = getBodyOffsetWidth();
+  return (
+    <header>
+      <img
+        src={`${"https://via.placeholder.com/" + Math.floor(size / 5)}`}
+        alt=""
+      />
+    </header>
+  );
+};
 
 const Main = () => (
   <main>
