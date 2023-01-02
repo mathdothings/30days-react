@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+article {
+  border: 1px solid gray;
+  border-radius: 0.25rem;
+  padding: 2rem;
+}
+
+img {
+  border-radius: 50%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+ul > li {
+  display: inline-block;
+  background-color: turquoise;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+footer > small {
+  color: gray;
+  font-size: 0.65rem;
+}
