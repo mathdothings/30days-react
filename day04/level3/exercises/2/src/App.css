@@ -50,7 +50,6 @@ p::before {
   width: fit-content;
   margin-bottom: 0.25rem;
   visibility: hidden;
-  transition: bottom step-end 200ms;
 }
 
 p:hover::before {
