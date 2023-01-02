@@ -31,12 +31,12 @@ import "./App.css";
 const Button = () => <button>Reusable!</button>;
 
 // 8. Make a reusable InputField component.
-const Input = (
+const Input = ({
   labelFor = "name",
   inputType = "text",
   inputName = "name",
-  inputId = "name"
-) => (
+  inputId = "name",
+}) => (
   <div>
     <label htmlFor={labelFor}></label>
     <input type={inputType} name={inputName} id={inputId} />
