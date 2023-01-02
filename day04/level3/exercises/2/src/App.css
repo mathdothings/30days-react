@@ -32,6 +32,37 @@ h1::before, h1::after {
   margin: 1rem 0;
 }
 
+p {
+  cursor: pointer;
+}
+
+p::before {
+  content: 'Fancy!';
+  display: block;
+  position: relative;
+  bottom: 100%;
+  left: 0;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  color: white;
+  background-color: blueviolet;
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 0.25rem;
+  visibility: hidden;
+}
+
+p:hover::before {
+  visibility: visible;
+}
+
+p:hover::after {
+  content: '';
+  display: block;
+  margin: 0.25rem auto;
+  outline: 0.05rem solid goldenrod;
+}
+
 ul {
   list-style: none;
   padding: 0;
