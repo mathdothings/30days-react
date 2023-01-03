@@ -1,5 +1,26 @@
 import "./App.css";
 
+const displayName = (...args) => {
+  const { ...props } = args;
+  return props;
+};
+
+const musk = {
+  first: "Elon",
+  last: "Musk",
+  nick: "@elonmusk",
+  company: "Space X",
+};
+
+const user = {
+  first: "user",
+  last: "username",
+  nick: "nick",
+  company: "usercompany",
+};
+
+console.log(displayName(musk, user));
+
 // Fuction to show month date year
 const showDate = (time) => {
   const months = [
