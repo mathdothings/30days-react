@@ -35,17 +35,7 @@ const Title = ({ content, color, fontFamily, textAlign }) => {
   );
 };
 
-const Button = () => {
-  return (
-    <button
-      onClick={() => {
-        return <Title content={"Nani?!"} />;
-      }}
-    >
-      Nani?!
-    </button>
-  );
-};
+const Input = (props) => <input {...props} />;
 
 function App() {
   return (
@@ -56,7 +46,7 @@ function App() {
         fontFamily={"monospace"}
         textAlign={"center"}
       />
-      <Button />
+      <Input type="number" />
       <Image imgSrc={htmlLogo} imgAlt="html logo" />
       <Image imgSrc={cssLogo} imgAlt="css logo" />
       <Image imgSrc={jsLogo} imgAlt="js logo" />
