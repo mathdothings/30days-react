@@ -28,11 +28,7 @@ const Image = (props) => {
 };
 
 const Title = ({ content, color, fontFamily, textAlign }) => {
-  return (
-    <h1 style={{ color: color, fontFamily: fontFamily, textAlign: textAlign }}>
-      {content}
-    </h1>
-  );
+  return <h1 style={{ color, fontFamily, textAlign }}>{content}</h1>;
 };
 
 const Input = (props) => <input {...props} />;
