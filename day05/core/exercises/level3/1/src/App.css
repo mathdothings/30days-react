@@ -39,3 +39,11 @@
 .read-the-docs {
   color: #888;
 }
+
+div {
+  width: 80vw;
+  padding: 0.35rem 0;
+  font-size: 1.15rem;
+  border-radius: 0.25rem;
+  margin-top: 0.35rem;
+}
