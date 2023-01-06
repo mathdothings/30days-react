@@ -1,34 +1,50 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import "./App.css";
+
+// array of numbers
+const numbers = [1, 2, 3, 4, 5];
+
+// array of arrays
+const skills = [
+  ["HTML", 10],
+  ["CSS", 7],
+  ["JavaScript", 9],
+  ["React", 8],
+];
+
+const destruct = (array) => {
+  return array.map(([skill, level]) => `Skill: ${skill}, Level: ${level}`);
+};
+
+console.log(destruct(skills));
+
+const NumbersList = ({ numbers }) => {
+  const list = numbers.map((item, index) => <li key={index}>{item}</li>);
+  return (
+    <div className="container">
+      <div>
+        <h1>Numbers List</h1>
+        <ul>{list}</ul>
+      </div>
+    </div>
+  );
+};
+
+const TechList = ({ skills: [tech, level] }) => {
+  const skillsList = skills.map(([skill, level], index) => (
+    <li key={index}>
+      {skill} {level}
+    </li>
+  ));
+  return <ul>{skillsList}</ul>;
+};
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    <>
+      <NumbersList numbers={numbers} />
+      <TechList skills={skills} />
+    </>
+  );
 }
 
-export default App
+export default App;
