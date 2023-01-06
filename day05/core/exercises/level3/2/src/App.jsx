@@ -1,34 +1,55 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import "./App.css";
+
+const Math = {
+  image: "https://via.placeholder.com/150",
+  name: "Mathdothings",
+  title: "Junior Developer",
+  place: "Worthland",
+  skills: ["HTML", "CSS", "JS", "React"],
+};
+
+const Elon = {
+  image: "https://via.placeholder.com/150",
+  name: "Elon Musk",
+  title: "CEO at Space X, Tesla and has his own world",
+  place: "USA",
+  skills: ["Money", "Money", "Money", "Money"],
+};
+
+const Bill = {
+  image: "https://via.placeholder.com/150",
+  name: "Bill Gates",
+  title: "CEO at Microsoft, Github and loves cake smashing on his face",
+  place: "USA",
+  skills: ["Money", "Money", "Money", "Money"],
+};
+
+const Button = ({ content }) => <button type="button">{content}</button>;
+
+const UserCard = ({ user }) => {
+  return (
+    <div className="user-card">
+      <img src={user.image} alt="user photo" />
+      <h1>{user.name}</h1>
+      <small>
+        {user.title}, {user.place}
+      </small>
+      <h2>Skills</h2>
+      {user.skills.map((skill, index) => (
+        <Button content={skill} key={index} />
+      ))}
+    </div>
+  );
+};
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    <>
+      <UserCard user={Math} />
+      <UserCard user={Elon} />
+      <UserCard user={Bill} />
+    </>
+  );
 }
 
-export default App
+export default App;
