@@ -26,16 +26,16 @@ const Bill = {
 
 const Button = ({ content }) => <button type="button">{content}</button>;
 
-const UserCard = ({ user }) => {
+const UserCard = ({ user: { image, name, title, place, skills } }) => {
   return (
     <div className="user-card">
-      <img src={user.image} alt="user photo" />
-      <h1>{user.name}</h1>
+      <img src={image} alt="user photo" />
+      <h1>{name}</h1>
       <small>
-        {user.title}, {user.place}
+        {title}, {place}
       </small>
       <h2>Skills</h2>
-      {user.skills.map((skill, index) => (
+      {skills.map((skill, index) => (
         <Button content={skill} key={index} />
       ))}
     </div>
