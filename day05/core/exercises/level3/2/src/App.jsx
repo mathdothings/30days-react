@@ -12,7 +12,7 @@ const Elon = {
   image: "https://via.placeholder.com/150",
   name: "Elon Musk",
   title: "CEO at Space X, Tesla and has his own world",
-  place: "USA",
+  place: "Mars",
   skills: ["Money", "Money", "Money", "Money"],
 };
 
