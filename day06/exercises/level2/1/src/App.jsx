@@ -26,6 +26,14 @@ function isPrime(number) {
   return false;
 }
 
+function isEven(number) {
+  return number % 2 === 0;
+}
+
+function isOdd(number) {
+  return !isEven(number);
+}
+
 function App() {
   const [count, setCount] = useState(0);
 
