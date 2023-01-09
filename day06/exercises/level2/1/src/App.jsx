@@ -1,9 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import "./App.css";
+
+function isPrime(number) {
+  let divisors = 0;
+
+  if (number === 1) {
+    return true;
+  }
+
+  if (number > 2 && number % 2 === 0) {
+    return false;
+  }
+
+  for (let x = 0; x <= number; x += 1) {
+    if (number % x === 0) {
+      divisors += 1;
+    }
+  }
+
+  if (divisors === 2) {
+    return true;
+  }
+
+  return false;
+}
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <div className="App">
@@ -28,7 +52,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
