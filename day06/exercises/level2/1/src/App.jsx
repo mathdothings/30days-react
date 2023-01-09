@@ -34,6 +34,16 @@ function isOdd(number) {
   return !isEven(number);
 }
 
+function generateNumbers() {
+  const numbersLength = 32;
+  const numbers = [];
+  for (let x = 0; x < numbersLength; x += 1) {
+    numbers.push(x);
+  }
+
+  return numbers;
+}
+
 function App() {
   return;
 }
