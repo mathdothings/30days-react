@@ -49,15 +49,15 @@ function generateNumbers(start, end) {
 function determineBackgroundColor(number) {
   let backgroundColor = "";
   if (isEven(number)) {
-    backgroundColor = "green";
+    backgroundColor = "#A0D468";
   }
 
   if (isOdd(number)) {
-    backgroundColor = "orange";
+    backgroundColor = "#FFCE54";
   }
 
   if (isPrime(number)) {
-    backgroundColor = "red";
+    backgroundColor = "#ED5565";
   }
 
   return backgroundColor;
