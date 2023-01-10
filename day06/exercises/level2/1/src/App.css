@@ -1,6 +1,23 @@
 #root {
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+
+.numbers-list {
+  font-family: monospace;
+  font-size: 1.5rem;
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  gap: 0.15rem;
+  flex-wrap: wrap;
+}
+
+.number-card {
+  padding: 1rem;
+  border-radius: 0.25rem;
+  color: white;
+  width: 3rem;
 }
