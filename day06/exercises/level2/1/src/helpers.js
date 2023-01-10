@@ -30,18 +30,6 @@ function isOdd(number) {
   return !isEven(number);
 }
 
-function generateNumbers(start, end) {
-  const numbers = [];
-  for (let x = start; x < end; x += 1) {
-    numbers.push({
-      value: x,
-      backgroundColor: determineBackgroundColor(x),
-    });
-  }
-
-  return numbers;
-}
-
 function determineBackgroundColor(number) {
   let style = "";
   if (isEven(number)) {
@@ -57,6 +45,18 @@ function determineBackgroundColor(number) {
   }
 
   return style;
+}
+
+function generateNumbers(start, end) {
+  const numbers = [];
+  for (let x = start; x < end; x += 1) {
+    numbers.push({
+      value: x,
+      backgroundColor: determineBackgroundColor(x),
+    });
+  }
+
+  return numbers;
 }
 
 export default generateNumbers;
