@@ -63,6 +63,17 @@ function determineBackgroundColor(number) {
   return backgroundColor;
 }
 
+function Numbers({ content, backgroundColor }) {
+  const numbers = generateNumbers(0, 32);
+  const numbersElements = numbers.map(({ backgroundColor, value }, index) => (
+    <li key={index} className="number-card" style={{ backgroundColor }}>
+      {(content = value)}
+    </li>
+  ));
+
+  return numbersElements;
+}
+
 function App() {
   return (
     <ul className="numbers-list">
