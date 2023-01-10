@@ -1,8 +1,6 @@
 import "./App.css";
 import generateNumbers from "./helpers";
 
-const numbers = generateNumbers();
-
 function Numbers({ numbers }) {
   return numbers.map(({ backgroundColor, value }, index) => (
     <li key={index} className={`number-card ${backgroundColor}`}>
