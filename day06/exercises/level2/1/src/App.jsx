@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useInsertionEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
 
@@ -34,18 +34,41 @@ function isOdd(number) {
   return !isEven(number);
 }
 
-function generateNumbers() {
-  const numbersLength = 32;
+function generateNumbers(start, end) {
   const numbers = [];
-  for (let x = 0; x < numbersLength; x += 1) {
-    numbers.push(x);
+  for (let x = start; x < end; x += 1) {
+    numbers.push({
+      value: x,
+      backgroundColor: determineBackgroundColor(x),
+    });
   }
 
   return numbers;
 }
 
+function determineBackgroundColor(number) {
+  let backgroundColor = "";
+  if (isEven(number)) {
+    backgroundColor = "green";
+  }
+
+  if (isOdd(number)) {
+    backgroundColor = "orange";
+  }
+
+  if (isPrime(number)) {
+    backgroundColor = "red";
+  }
+
+  return backgroundColor;
+}
+
 function App() {
-  return;
+  return (
+    <ul className="numbers-list">
+      <Numbers />
+    </ul>
+  );
 }
 
 export default App;
