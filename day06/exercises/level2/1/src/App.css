@@ -21,4 +21,21 @@
   border-radius: 0.25rem;
   color: white;
   width: 3rem;
+  cursor: pointer;
+}
+
+.is-even {
+  background-color: #A0D468;
+}
+
+.is-odd {
+  background-color: #FFCE54;
+}
+
+.is-prime {
+  background-color: #ED5565;
+}
+
+.number-card:hover {
+  background-color: #4FC1E9;
 }
