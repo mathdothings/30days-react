@@ -2,6 +2,22 @@ import { useInsertionEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
 
+function Numbers({ numbers }) {
+  return numbers.map(({ backgroundColor, value }, index) => (
+    <li key={index} className={`number-card ${backgroundColor}`}>
+      {value}
+    </li>
+  ));
+}
+
+function App() {
+  return (
+    <ul className="numbers-list">
+      <Numbers numbers={generateNumbers(0, 32)} />
+    </ul>
+  );
+}
+
 function isPrime(number) {
   let divisors = 0;
 
@@ -61,22 +77,6 @@ function determineBackgroundColor(number) {
   }
 
   return style;
-}
-
-function Numbers({ numbers }) {
-  return numbers.map(({ backgroundColor, value }, index) => (
-    <li key={index} className={`number-card ${backgroundColor}`}>
-      {value}
-    </li>
-  ));
-}
-
-function App() {
-  return (
-    <ul className="numbers-list">
-      <Numbers numbers={generateNumbers(0, 32)} />
-    </ul>
-  );
 }
 
 export default App;
