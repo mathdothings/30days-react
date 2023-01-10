@@ -47,25 +47,25 @@ function generateNumbers(start, end) {
 }
 
 function determineBackgroundColor(number) {
-  let backgroundColor = "";
+  let style = "";
   if (isEven(number)) {
-    backgroundColor = "#A0D468";
+    style = "is-even";
   }
 
   if (isOdd(number)) {
-    backgroundColor = "#FFCE54";
+    style = "is-odd";
   }
 
   if (isPrime(number)) {
-    backgroundColor = "#ED5565";
+    style = "is-prime";
   }
 
-  return backgroundColor;
+  return style;
 }
 
 function Numbers({ numbers }) {
   return numbers.map(({ backgroundColor, value }, index) => (
-    <li key={index} className="number-card" style={{ backgroundColor }}>
+    <li key={index} className={`number-card ${backgroundColor}`}>
       {value}
     </li>
   ));
