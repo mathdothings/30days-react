@@ -1,14 +1,24 @@
 import "./App.css";
-import generateHex from "./helpers";
+import { generateHex, range } from "./helpers";
 
 const MiniCard = ({ backgroundColor }) => (
-  <div style={{ backgroundColor }}>{backgroundColor}</div>
+  <div className="mini-card" style={{ backgroundColor }}>
+    {backgroundColor}
+  </div>
+);
+
+const MiniCards = ({ amount }) => (
+  <>
+    {range(0, amount).map((item) => (
+      <MiniCard backgroundColor={generateHex()} />
+    ))}
+  </>
 );
 
 function App() {
   return (
     <>
-      <MiniCard backgroundColor={generateHex()} />
+      <MiniCards amount={40} />
     </>
   );
 }
