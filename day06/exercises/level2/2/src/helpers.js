@@ -11,4 +11,13 @@ const generateHex = () => {
   return "#" + hex;
 };
 
-export default generateHex;
+const range = (start = 0, end = 1) => {
+  const result = [];
+  for (let x = start; x < end; x += 1) {
+    result.push(x);
+  }
+
+  return result;
+};
+
+export { generateHex, range };
