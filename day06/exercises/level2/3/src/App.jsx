@@ -74,12 +74,10 @@ const Bar = ({ percentage, amount }) => (
   </div>
 );
 
-const Application = () => <Box />;
-
 function App() {
   return (
     <>
-      <Application />
+      <Box />
     </>
   );
 }
