@@ -1,34 +1,87 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import "./App.css";
+
+const data = [
+  { place: "world", value: 7693165599 },
+  {
+    place: "china",
+    value: 1377422166,
+  },
+  {
+    place: "india",
+    value: 1295210000,
+  },
+  {
+    place: "usa",
+    value: 323947000,
+  },
+  {
+    place: "indonesia",
+    value: 258705000,
+  },
+  {
+    place: "brazil",
+    value: 206135893,
+  },
+  {
+    place: "pakistan",
+    value: 194125062,
+  },
+  {
+    place: "nigeria",
+    value: 186988000,
+  },
+  {
+    place: "bangladesh",
+    value: 161006790,
+  },
+  {
+    place: "russia",
+    value: 146599183,
+  },
+  {
+    place: "japan",
+    value: 126960000,
+  },
+];
+
+const Box = () => {
+  const range = data[1].value - data[data.length - 1].value;
+  const step = Math.floor(range / 100);
+  const total = step * 100;
+  return (
+    <div className="box">
+      <Bar percentage={"10%"} amount={"10%"} />
+      <Bar percentage={"20%"} amount={"20%"} />
+      <Bar percentage={"30%"} amount={"30%"} />
+      <Bar percentage={"40%"} amount={"40%"} />
+      <Bar percentage={"50%"} amount={"50%"} />
+      <Bar percentage={"60%"} amount={"60%"} />
+      <Bar percentage={"70%"} amount={"70%"} />
+      <Bar percentage={"80%"} amount={"80%"} />
+      <Bar percentage={"90%"} amount={"90%"} />
+      <Bar percentage={"100%"} amount={"100%"} />
+      {/* {console.log("range:", range)}
+      {console.log("step:", step)}
+      {console.log("total:", total)} */}
+      <p>I should do this boring math?</p>
+    </div>
+  );
+};
+
+const Bar = ({ percentage, amount }) => (
+  <div className="bar" style={{ minWidth: percentage, maxWidth: "500px" }}>
+    {amount}
+  </div>
+);
+
+const Application = () => <Box />;
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    <>
+      <Application />
+    </>
+  );
 }
 
-export default App
+export default App;
