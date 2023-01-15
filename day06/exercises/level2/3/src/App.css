@@ -5,14 +5,11 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 }
 
 .box {
   width: 500px;
-  height: 400px;
-  background-color: blanchedalmond;
+  background-color: bisque;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,8 +18,11 @@
 .bar {
   background-color: salmon;
   width: max-content;
-  margin-top: 5px;
   padding: 3px;
   font-family: monospace;
   height: max-content;
+}
+
+.bar + .bar {
+  margin-top: 5px;
 }
