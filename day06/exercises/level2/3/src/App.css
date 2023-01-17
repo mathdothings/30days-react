@@ -19,7 +19,7 @@
   background-color: salmon;
   width: max-content;
   padding: 3px;
-  font-family: monospace;
+  /* font-family: monospace; */
   height: max-content;
 }
 

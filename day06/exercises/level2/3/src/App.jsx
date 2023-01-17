@@ -56,15 +56,15 @@ const Box = () => {
   return (
     <div className="box">
       {percentages.map((item, index) => (
-        <Bar key={index} percentage={item.split(" ")[1]} amount={item + "%"} />
+        <Bar key={index} percentage={item.split(" ")[1]} content={item + "%"} />
       ))}
     </div>
   );
 };
 
-const Bar = ({ percentage, amount }) => (
+const Bar = ({ percentage, content }) => (
   <div className="bar" style={{ width: `${percentage}%`, maxWidth: "500px" }}>
-    <pre style={{ margin: 0 }}>{amount}</pre>
+    <pre style={{ margin: 0 }}>{content}</pre>
   </div>
 );
 
