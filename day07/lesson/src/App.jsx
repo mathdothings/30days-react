@@ -1,34 +1,48 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import "./App.css";
+import Classes from "./class";
+import React from "react";
 
-function App() {
-  const [count, setCount] = useState(0)
+const square = new Classes.Square(5);
+console.log(square.area, square.Math());
 
-  return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <header>
+        <div className="header-wrapper">
+          <h1>{this.props.data.welcome}</h1>
+          <h2>{this.props.data.title}</h2>
+          <h3>
+            {this.props.data.author.firstName} {this.props.data.author.lastName}
+          </h3>
+          <small>{this.props.data.date}</small>
+        </div>
+      </header>
+    );
+  }
 }
 
-export default App
+const App = () => {
+  const data = {
+    welcome: "Welcome to 30 Days Of React",
+    title: "Getting Started React",
+    subtitle: "JavaScript Library",
+    author: {
+      firstName: "Asabeneh",
+      lastName: "Yetayeh",
+    },
+    date: "Oct 7, 2020",
+  };
+
+  return (
+    <div className="app">
+      <Header data={data} />
+    </div>
+  );
+};
+
+export default App;
