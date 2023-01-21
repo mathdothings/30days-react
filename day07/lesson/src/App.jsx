@@ -3,7 +3,9 @@ import Classes from "./class";
 import React from "react";
 
 const square = new Classes.Square(5);
-console.log(square.area, square.Math());
+const rectangle = new Classes.Rectangle(2, 5);
+const triangle = new Classes.Triangle(10, 5);
+console.log(rectangle, triangle, triangle.area);
 
 class Header extends React.Component {
   constructor(props) {
@@ -26,6 +28,12 @@ class Header extends React.Component {
   }
 }
 
+class Footer extends React.Component {
+  render() {
+    return <footer>Coded by: @mathdothings</footer>;
+  }
+}
+
 const App = () => {
   const data = {
     welcome: "Welcome to 30 Days Of React",
@@ -41,6 +49,7 @@ const App = () => {
   return (
     <div className="app">
       <Header data={data} />
+      <Footer />
     </div>
   );
 };

@@ -13,10 +13,6 @@ class Rectangle {
   set area(value) {
     this._area = value;
   }
-
-  Math() {
-    return "Math";
-  }
 }
 
 class Square extends Rectangle {
@@ -27,9 +23,22 @@ class Square extends Rectangle {
   }
 }
 
+class Triangle extends Rectangle {
+  constructor(width, height) {
+    super(width, height);
+
+    this.name = "Triangle";
+  }
+
+  get area() {
+    return (this.width * this.height) / 2;
+  }
+}
+
 const Classes = {
   Rectangle,
   Square,
+  Triangle,
 };
 
 export default Classes;
