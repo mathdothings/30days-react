@@ -2,54 +2,67 @@ import "./App.css";
 import Classes from "./class";
 import React from "react";
 
-const square = new Classes.Square(5);
-const rectangle = new Classes.Rectangle(2, 5);
-const triangle = new Classes.Triangle(10, 5);
-console.log(rectangle, triangle, triangle.area);
-
 class Header extends React.Component {
   constructor(props) {
     super(props);
   }
 
   render() {
+    const {
+      welcome,
+      title,
+      author: { firstName, lastName },
+      date,
+    } = this.props.data;
     return (
       <header>
         <div className="header-wrapper">
-          <h1>{this.props.data.welcome}</h1>
-          <h2>{this.props.data.title}</h2>
+          <h1>{welcome}</h1>
+          <h2>{title}</h2>
           <h3>
-            {this.props.data.author.firstName} {this.props.data.author.lastName}
+            {firstName} {lastName}
           </h3>
-          <small>{this.props.data.date}</small>
+          <small>{date}</small>
         </div>
       </header>
     );
   }
 }
 
-class Footer extends React.Component {
+class TechList extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
-    return <footer>Coded by: @mathdothings</footer>;
+    const techsFormatted = this.props.techs.map((tech) => (
+      <li key={tech}>{tech}</li>
+    ));
+    return (
+      <ul>
+        <h2>Skills</h2>
+        {techsFormatted}
+      </ul>
+    );
   }
 }
 
 const App = () => {
-  const data = {
-    welcome: "Welcome to 30 Days Of React",
-    title: "Getting Started React",
-    subtitle: "JavaScript Library",
-    author: {
-      firstName: "Asabeneh",
-      lastName: "Yetayeh",
-    },
-    date: "Oct 7, 2020",
-  };
-
   return (
     <div className="app">
-      <Header data={data} />
-      <Footer />
+      <Header
+        data={{
+          welcome: "Welcome to 30 Days Of React",
+          title: "Getting Started React",
+          subtitle: "JavaScript Library",
+          author: {
+            firstName: "Asabeneh",
+            lastName: "Yetayeh",
+          },
+          date: "Oct 7, 2020",
+        }}
+      />
+      <TechList techs={["HTML", "CSS", "JS", "React", "Linux", "Bash"]} />
     </div>
   );
 };
