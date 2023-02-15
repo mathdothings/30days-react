@@ -12,3 +12,13 @@
 .read-the-docs {
   color: #888;
 }
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+img {
+  width: 200px;
+  border-radius: 50%;
+}
