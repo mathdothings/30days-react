@@ -9,14 +9,51 @@
   <body>
     <script>
       class Person {
-        constructor(name, state) {
+        state = { number: 0 };
+        constructor(name, value) {
           this.name = name;
-          this.state = { info: `My name is ${this.name}` };
+          this.state = this.state;
+          this.state.number = value;
+        }
+
+        setState(value) {
+          this.state.number = value;
         }
       }
 
-      const i = new Person("John");
-      console.log(i.state);
+      const p1 = new Person("Alfred", 10);
+      const p2 = new Person("John", 5);
+      console.log(p1);
+      console.log(p2);
+      p2.setState(100);
+      // console.log(p1);
+      // console.log(p2);
+
+      // const n = document.createElement("h1");
+      // n.innerText = i.info.count;
+
+      // const body = document.querySelector("body");
+      // body.appendChild(n);
+
+      // const buttonAdd = document.createElement("button");
+      // buttonAdd.innerText = "+";
+      // buttonAdd.onclick = () => {
+      //   i.info.count++;
+      //   n.innerText = i.info.count;
+      //   console.log(i.info.count);
+      // };
+
+      // body.appendChild(buttonAdd);
+
+      // const buttonMinus = document.createElement("button");
+      // buttonMinus.innerText = "-";
+      // buttonMinus.onclick = () => {
+      //   i.info.count--;
+      //   n.innerText = i.info.count;
+      //   console.log(i.info.count);
+      // };
+
+      // body.appendChild(buttonMinus);
     </script>
   </body>
 </html>
