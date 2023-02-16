@@ -11,7 +11,18 @@ class App extends React.Component {
   }
 
   updateState = () => {
+    const removeAllClass = (element) => {
+      const list = element.classList;
+      if (list.length > 0) {
+        list.forEach((item) => {
+          list.remove(item);
+        });
+      }
+    };
     let theme = this.state.theme === "light" ? "dark" : "light";
+    const body = document.querySelector("body");
+    removeAllClass(body);
+    body.classList.add(theme);
     this.setState({ theme });
   };
 
@@ -24,7 +35,7 @@ class App extends React.Component {
       <>
         <Header />
         <Main />
-        <Card theme={this.state.theme} updateState={this.updateState} />
+        <Card updateState={this.updateState} />
         <Footer />
       </>
     );

@@ -40,7 +40,7 @@ class Card extends React.Component {
 
   render() {
     return (
-      <div className={this.props.theme}>
+      <div>
         <img src="http://via.placeholder.com/640x640" alt="profile" />
         <p>Mathdothings</p>
         <button type="button" onClick={this.greetPeople}>

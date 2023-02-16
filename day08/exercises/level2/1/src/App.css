@@ -18,20 +18,21 @@ ul {
 }
 
 img {
-  width: 200px;
+  width: 100px;
   border-radius: 50%;
 }
 
-footer {
-  background-color: #888;
-}
-
 .dark {
-  background-color: #1f1f1f;
+  background-color: #1e1e1e;
   color: white;
 }
 
 .light {
   background-color: white;
   color: black;
+}
+
+
+small {
+  margin-bottom: 1rem;
 }
