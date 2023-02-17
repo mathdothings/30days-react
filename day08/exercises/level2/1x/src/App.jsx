@@ -13,9 +13,9 @@ class Navegation extends React.Component {
           <li className="nav_menu_item">About</li>
           <li
             className={`${this.props.theme} nav_menu_item nav_menu_item--theme-button`}
-            onMouseEnter={this.props.changeState}
+            onMouseDown={this.props.changeTheme}
           >
-            {this.props.changeIcon()}
+            {this.props.changeIcon(this.props.theme)}
           </li>
         </ul>
       </nav>
@@ -26,14 +26,22 @@ class Navegation extends React.Component {
 class App extends React.Component {
   state = { theme: "light" };
 
-  changeState = () => {
-    const theme = this.state.theme === "light" ? "dark" : "light";
-    this.setState({ theme });
+  changeState = (key, value) => {
+    this.setState({ [key]: value });
   };
 
-  changeIcon = () => {
-    if (this.state.theme === "light") return <Sun size={"1rem"} />;
-    if (this.state.theme === "dark") return <Moon size={"1rem"} />;
+  inactiveTheme = () => {
+    const theme = this.state.theme === "light" ? "dark" : "light";
+    return theme;
+  };
+
+  changeTheme = () => {
+    this.changeState("theme", this.inactiveTheme());
+  };
+
+  changeIcon = (theme) => {
+    if (theme === "light") return <Sun size={"1rem"} />;
+    if (theme === "dark") return <Moon size={"1rem"} />;
   };
 
   componentDidUpdate() {
@@ -45,9 +53,10 @@ class App extends React.Component {
       <>
         <Navegation
           theme={this.state.theme}
-          themeIcon={this.state.themeIcon}
           changeState={this.changeState}
+          changeTheme={this.changeTheme}
           changeIcon={this.changeIcon}
+          inactiveTheme={this.inactiveTheme}
         />
       </>
     );
