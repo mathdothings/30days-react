@@ -43,6 +43,19 @@ body {
 
 
 .nav_menu_item--theme-button {
-  background-color: gold;
-  border-radius: 10px;
+  border-radius: 50%;
+  color: gold;
+  background-color: #2e2e2e;
+}
+
+.nav_menu_item--theme-button:hover {
+  color: gold;
+}
+
+.light {
+  /* background-color: darkslategray; */
+}
+
+.dark {
+  /* background-color: darkslategray; */
 }
