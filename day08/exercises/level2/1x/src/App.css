@@ -43,7 +43,7 @@ body {
 
 
 .nav_menu_item--theme-button {
-  border-radius: 50%;
+  border-radius: 10px;
   color: gold;
   background-color: #2e2e2e;
 }

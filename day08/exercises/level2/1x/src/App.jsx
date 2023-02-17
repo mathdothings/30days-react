@@ -28,18 +28,12 @@ class App extends React.Component {
 
   changeState = () => {
     const theme = this.state.theme === "light" ? "dark" : "light";
-
-    if (theme === "light") {
-      this.setState({ theme });
-    }
-    if (theme === "dark") {
-      this.setState({ theme });
-    }
+    this.setState({ theme });
   };
 
   changeIcon = () => {
-    if (this.state.theme === "light") return <Sun />;
-    if (this.state.theme === "dark") return <Moon />;
+    if (this.state.theme === "light") return <Sun size={"1rem"} />;
+    if (this.state.theme === "dark") return <Moon size={"1rem"} />;
   };
 
   componentDidUpdate() {
