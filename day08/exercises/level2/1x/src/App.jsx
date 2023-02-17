@@ -20,7 +20,7 @@ class Navegation extends React.Component {
             className="nav_menu_item nav_menu_item--theme-button"
             onMouseEnter={this.props.changeState}
           >
-            <Sun />
+            {this.props.themes}
           </li>
         </ul>
       </nav>
