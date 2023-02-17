@@ -1,11 +1,11 @@
 import "./App.css";
 import React from "react";
+import { Sun, Moon } from "react-feather";
 
 class Navegation extends React.Component {
-  capitalize = (entireWord) => {
-    entireWord = this.props.theme;
-    const firstLetter = entireWord.charAt(0).toLocaleUpperCase();
-    return `${firstLetter + entireWord.slice(1)}`;
+  capitalize = (word) => {
+    const firstLetter = word.charAt(0).toLocaleUpperCase();
+    return `${firstLetter + word.slice(1)}`;
   };
 
   render() {
@@ -17,10 +17,10 @@ class Navegation extends React.Component {
           <li className="nav_menu_item">Testimonials</li>
           <li className="nav_menu_item">About</li>
           <li
-            className="nav_menu_item nav_menu_item--theme-select"
+            className="nav_menu_item nav_menu_item--theme-button"
             onMouseEnter={this.props.changeState}
           >
-            {this.capitalize(this.props.theme)}
+            <Sun />
           </li>
         </ul>
       </nav>
@@ -29,7 +29,7 @@ class Navegation extends React.Component {
 }
 
 class App extends React.Component {
-  state = { theme: "light" };
+  state = { theme: <Sun /> };
   changeState = (key, value) => {
     this.setState({ [key]: value });
   };

@@ -40,3 +40,9 @@ body {
   background-color: white;
   border-radius: 10px;
 }
+
+
+.nav_menu_item--theme-button {
+  background-color: gold;
+  border-radius: 10px;
+}
