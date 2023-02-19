@@ -11,7 +11,7 @@ class AddProject extends React.Component {
   };
 
   render() {
-    const categoryOptions = this.props.categories.map((category, index) => (
+    const categories = this.props.categories.map((category, index) => (
       <option key={index} value="category">
         {category}
       </option>
@@ -26,7 +26,7 @@ class AddProject extends React.Component {
           </div>
           <div>
             <label htmlFor="category">Title</label>
-            <select>{categoryOptions}</select>
+            <select>{categories}</select>
           </div>
           <input type="submit" value="Submit  " />
         </form>
