@@ -4,8 +4,8 @@ class Header extends React.Component {
   render() {
     return (
       <header>
-        <h1>Holyday Traveling Selector</h1>
-        <h2>Select a country bellow</h2>
+        <h1>TODO - Title</h1>
+        <h2>TODO - Sub</h2>
       </header>
     );
   }
