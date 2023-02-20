@@ -1,43 +1,24 @@
 import React from "react";
+import helper from "../helpers/handlers";
 
 class Main extends React.Component {
   state = { data: [] };
 
-  componentDidMount() {
+  async componentDidMount() {
     const URL = "https://restcountries.com/v3.1/all";
-    const getData = async (url) => {
-      try {
-        const response = await fetch(url);
-        const json = await response.json();
-        this.setState({ data: json });
-      } catch (error) {
-        console.warn(error);
-      }
-    };
-
-    getData(URL);
+    try {
+      const response = await fetch(URL);
+      const json = await response.json();
+      this.setState({ data: json });
+    } catch (error) {
+      console.warn(error);
+    }
   }
-
-  getLanguages = (obj) => {
-    let values = [];
-    for (const key in obj) {
-      values.push(obj[key]);
-    }
-    return values;
-  };
-
-  getCurrencies = (obj) => {
-    let keys = [];
-    for (const key in obj) {
-      keys.push([obj[key].name, obj[key].symbol]);
-    }
-    return keys;
-  };
 
   render() {
     return (
       <ul>
-        {console.log(this.state.data)}
+        {/* {console.log(this.state.data)} */}
         {this.state.data.map((country, index) => (
           <li key={index}>
             <div>
@@ -55,14 +36,14 @@ class Main extends React.Component {
               </p>
               <p>
                 <strong>Language: </strong>
-                {this.getLanguages(country.languages)}
+                {helper.format(helper.handleLanguages(country.languages))}
               </p>
               <p>
                 <strong>Population: </strong>
                 {country.population}
               </p>
               <strong>Currency: </strong>
-              {this.getCurrencies(country.currencies)}
+              {helper.format(helper.handleCurrencies(country.currencies))}
             </div>
           </li>
         ))}
