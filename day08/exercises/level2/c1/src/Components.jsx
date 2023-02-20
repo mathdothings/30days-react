@@ -6,8 +6,8 @@ class AddProject extends React.Component {
   };
 
   handleSubmit = (event) => {
-    console.log("Submitted");
     event.preventDefault();
+    console.log(event.target[0].value, event.target[2].value);
   };
 
   render() {
@@ -21,14 +21,14 @@ class AddProject extends React.Component {
         <h3>Add Project</h3>
         <form onSubmit={this.handleSubmit}>
           <div>
-            <label htmlFor="title">Title</label>
-            <input type="text" />
+            <label htmlFor="title">Title: </label>
+            <input type="text" name="title" id="title" />
           </div>
           <div>
-            <label htmlFor="category">Title</label>
+            <label htmlFor="category">Category: </label>
             <select>{categories}</select>
           </div>
-          <input type="submit" value="Submit  " />
+          <input type="submit" value="Submit" />
         </form>
       </div>
     );

@@ -20,10 +20,14 @@ class App extends React.Component {
     });
   }
 
+  addProject = (newProject) => {
+    this.setState({ projects: this.state.projects.push(newProject) });
+  };
+
   render() {
     return (
       <>
-        <AddProject />
+        <AddProject addProject={this.addProject} />
         <Projects projects={this.state.projects} />
       </>
     );

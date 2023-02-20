@@ -19,3 +19,15 @@ body {
 p {
   margin-bottom: 1rem;
 }
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+[type=submit] {
+  align-self: start;
+  padding: 0.15rem 0.25rem;
+}
